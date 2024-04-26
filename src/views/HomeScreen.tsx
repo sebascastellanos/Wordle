@@ -11,6 +11,9 @@ const HomeScreen = ({ navigation }: any) => {
     navigation.navigate("Score");
   };
 
+  const handleQrStart = () => {
+    navigation.navigate("qr");
+  };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.contentContainer}>
@@ -27,6 +30,12 @@ const HomeScreen = ({ navigation }: any) => {
             onPress={handleNavigateToScore}
           >
             <Text style={styles.buttonText}>Puntaje</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.button, styles.qrButton]}
+            onPress={handleQrStart}
+          >
+            <Text style={styles.buttonText}>Scanner</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -80,6 +89,10 @@ const styles = StyleSheet.create({
   },
   scoreButton: {
     backgroundColor: "#ffa500", 
+  }
+  ,
+  qrButton: {
+    backgroundColor: "#727E53", 
   },
   buttonText: {
     fontSize: 18,
